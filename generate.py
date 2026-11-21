@@ -56,19 +56,19 @@ MASTHEAD_DATE = "FRIDAY 20 NOVEMBER 2026"
 
 STATS = [
     ("372,000", "EVACUATED"),
-    ("1,101", "DOW POINTS LOST"),
+    ("950", "DOW POINTS LOST"),
     ("24.6M", "GTA VI COPIES"),
     ("100,000", "YOUTH PLACES"),
     ("9,341", "SHELTERS READY"),
 ]
 
-REGION_BAR = "ASIA 9 \u00b7 EUROPE 5 \u00b7 AMERICAS 7 \u00b7 MIDDLE EAST 1 \u00b7 AFRICA 1 \u00b7 OCEANIA 2 \u00b7 GLOBAL 5"
+REGION_BAR = "ASIA 9 \u00b7 EUROPE 6 \u00b7 AMERICAS 7 \u00b7 AFRICA 1 \u00b7 OCEANIA 2 \u00b7 GLOBAL 5"
 
 # large stories: (num, kicker, headline, deck, scene)
 LARGE = [
-    (1, "SHENZHEN \u00b7 20 NOV \u00b7 SUMMIT",
-     "THREE LEADERS SIGN PEACE DECLARATION",
-     "Nuclear war \u2018cannot be won.\u2019 (Declaration)", "summit"),
+    (1, "KYIV \u00b7 20 NOV \u00b7 WAR",
+     "MISSILES HIT KYIV BRIDGES",
+     "8 killed, bridges shut. (Reuters)", "kyiv"),
     (2, "POLAND \u00b7 20 NOV \u00b7 DEFENCE",
      "RUSSIAN MISSILES LAND IN POLAND",
      "No one hurt, NATO alerted. (Reuters)", "poland"),
@@ -79,53 +79,54 @@ LARGE = [
 
 # numbered stories 4-13: (num, headline, kicker+deck line)
 NUMBERED = [
-    (4, "ICJ: GENOCIDE IN MYANMAR",
-     "THE HAGUE \u00b7 20 NOV \u2014 Rules 9\u20136. (ICJ)"),
+    (4, "NASDAQ PLUNGES 5.3%",
+     "NEW YORK \u00b7 20 NOV \u2014 Erases 2026 gains. (AP)"),
     (5, "UK AND EU SEAL RESET DEAL",
      "BRUSSELS \u00b7 20 NOV \u2014 100,000 places. (Reuters)"),
     (6, "ANTHROPIC SLIDES DAY TWO",
      "WALL ST \u00b7 20 NOV \u2014 Shares fall 8.5%. (Nasdaq)"),
-    (7, "DOW DROPS 1,101 POINTS",
-     "NEW YORK \u00b7 20 NOV \u2014 S&P falls sixth day. (WSJ)"),
-    (8, "TAIWAN SHARES CRASH 6.6%",
+    (7, "DOW DROPS 950 POINTS",
+     "NEW YORK \u00b7 20 NOV \u2014 S&P falls 3.7%. (AP)"),
+    (8, "TAIWAN SHARES CRASH 6.2%",
      "TAIPEI \u00b7 20 NOV \u2014 Chip rout spreads. (Reuters)"),
-    (9, "SENATE BACKS TRUMP ON IRAN",
-     "WASH. \u00b7 20 NOV \u2014 Fails 51\u201348. (Reuters)"),
-    (10, "HOUTHI STRIKE HITS RIYADH",
-     "RIYADH \u00b7 20 NOV \u2014 None hurt. (Reuters)"),
+    (9, "NIKKEI FALLS 5.1%",
+     "TOKYO \u00b7 20 NOV \u2014 Asia rout spreads. (Reuters)"),
+    (10, "BITCOIN SINKS BELOW $59K",
+     "GLOBAL \u00b7 20 NOV \u2014 7th weekly loss. (CoinDesk)"),
     (11, "COP31 TALKS RUN OVERTIME",
      "ANTALYA \u00b7 20 NOV \u2014 Fossil fuels out. (Reuters)"),
     (12, "KENYA STARTS OIL DRILLING",
-     "TURKANA \u00b7 20 NOV \u2014 Rigs start. (Reuters)"),
+     "TURKANA \u00b7 20 NOV \u2014 Rigs start. (Capital FM)"),
     (13, "ITALY STRIKES OVER WAGES",
      "ROME \u00b7 20 NOV \u2014 100 cities protest. (Reuters)"),
 ]
 
 MORE_HEADER = "ALSO ON FRIDAY 20 NOVEMBER \u2014 17 MORE STORIES"
 MORE = [
-    "Nvidia falls 3.3% (WSJ)",
-    "AMD plunges 7.7% (Zacks)",
-    "GTA 75% PS5 (GamesBeat)",
+    "Nvidia falls 14% (WSJ)",
+    "AMD falls 13% (Barron's)",
+    "GTA 75% PS5 (SensorTower)",
     "GTA 120m hours (Game8)",
-    "Voyager 1 light-day (NASA)",
-    "Hayabusa2 2031 off (JAXA)",
     "Seoul impeach (JoongAng)",
-    "Bukele 3rd term (Reuters)",
-    "Phillips makes 118 (ICC)",
-    "Nicholls 175 not out (AP)",
-    "JP CPI 2.2% (Stats Bureau)",
+    "Phillips 118 (Reuters)",
+    "Nicholls 175* (Reuters)",
+    "JP CPI 2.3% (Stats Bureau)",
     "423 rescue teams (IMD)",
-    "NATO jets up (Reuters)",
-    "SoftBank -14.5% (Nikkei)",
+    "NATO jets up (BBC)",
+    "SoftBank -14.5% (CNBC)",
     "Samsung falls 7% (Reuters)",
     "COP31 $120bn cut (Reuters)",
-    "2 killed in Haiti (Reuters)",
+    "2 killed in Haiti (AJ)",
+    "Kospi falls 5.2% (Reuters)",
+    "11 regions lose power (AP)",
+    "Micron -14% (Barron's)",
 ]
 
 DATE_CHECK = [
-    "DATE CHECK \u2014 LEFT OUT: Anthropic $83 / $111.50 (19 Nov prices).",
-    "LEFT OUT: \u2018Dems take Congress\u2019 (midterms were 3 Nov).",
-    "LEFT OUT: Voyager 2 in 2035 (not yet happened).",
+    "DATE CHECK \u2014 LEFT OUT:",
+    "Summit + ICJ (19 Nov). Anthropic $83 / $111.50 (19 Nov).",
+    "\u2018Dems take Congress\u2019 (3 Nov). Voyager 1 (18 Nov).",
+    "Hayabusa2 off (17 Nov). Voyager 2 in 2035 (not yet).",
 ]
 
 FOOTER = [
@@ -182,6 +183,25 @@ def draw_scene(draw, kind, x, y, w, h):
             draw.ellipse([cx - 9, y + h - 30, cx + 9, y + h - 14], fill=skin)
             draw.rectangle([cx - 12, y + h - 16, cx + 12, y + h - 11],
                            fill=[(30, 60, 140), (160, 30, 30), (40, 40, 40)][j])
+    elif kind == "kyiv":
+        draw.rectangle([x, y, x + w, y + h], fill=(22, 26, 44))
+        # distant skyline silhouettes with a few lit windows
+        for bx, bh in [(x + 14, 8), (x + 60, 11), (x + 118, 7), (x + 176, 10),
+                       (x + 232, 8), (x + 284, 11)]:
+            draw.rectangle([bx, y + 2, bx + 24, y + 2 + bh], fill=(14, 17, 30))
+            draw.rectangle([bx + 5, y + 5, bx + 8, y + 8], fill=(255, 214, 90))
+        # river (Dnipro) along the bottom
+        draw.rectangle([x, y + h - 9, x + w, y + h], fill=(46, 78, 118))
+        # bridge deck across the river, three arches dipping into the water
+        draw.rectangle([x, y + h - 15, x + w, y + h - 13], fill=(150, 150, 160))
+        for cx in (x + 55, x + w // 2, x + w - 55):
+            draw.arc([cx - 13, y + h - 28, cx + 13, y + h], start=0, end=180,
+                     fill=(150, 150, 160), width=2)
+        # two explosion bursts on the deck
+        for ex, ey in [(x + 55, y + h - 20), (x + w - 55, y + h - 20)]:
+            draw.ellipse([ex - 6, ey - 5, ex + 6, ey + 5], fill=(255, 140, 40))
+            draw.ellipse([ex - 3, ey - 2, ex + 3, ey + 2], fill=(255, 210, 90))
+            draw.ellipse([ex - 9, ey - 10, ex - 1, ey - 4], fill=(120, 120, 130))
     elif kind == "poland":
         draw.rectangle([x, y, x + w, y + h], fill=(28, 28, 44))
         for j, (x0, y0) in enumerate([(x + 16, y + 5), (x + 110, y + 3), (x + 200, y + 7)]):
@@ -225,13 +245,13 @@ def main():
     assert tw(d, MASTHEAD_KICKER, f_kick) <= CW, "kicker too wide"
     d.text(((W - tw(d, MASTHEAD_KICKER, f_kick)) / 2, y), MASTHEAD_KICKER,
            font=f_kick, fill=RED)
-    y += 30
+    y += 29
     assert tw(d, MASTHEAD_DATE, f_date) <= CW, "date too wide"
     d.text(((W - tw(d, MASTHEAD_DATE, f_date)) / 2, y), MASTHEAD_DATE,
            font=f_date, fill=INK)
-    y += 52
+    y += 49
     d.line([(MX, y), (W - MX, y)], fill=RULE, width=3)
-    y += 6
+    y += 5
 
     # ---- stats strip: 5 cells, number over label ----
     f_num = font(F_SERIF_B, 30)
@@ -248,7 +268,7 @@ def main():
             d.line([(MX + i * cell, y + 2), (MX + i * cell, y + 56)], fill=GREY, width=1)
     y = y0 + 60
     d.line([(MX, y), (W - MX, y)], fill=RULE, width=2)
-    y += 6
+    y += 5
 
     # ---- region bar ----
     f_reg = font(F_COND_B, 26)
@@ -257,14 +277,14 @@ def main():
            font=f_reg, fill=RED)
     y += 28
     d.line([(MX, y), (W - MX, y)], fill=RULE, width=2)
-    y += 6
+    y += 5
 
     # ---- 3 large stories ----
     f_lkick = font(F_COND, 26)
     f_lhead = font(F_SANS_B, 28)
     f_ldeck = font(F_SANS, 26)
     colw = (CW - 2 * 12) // 3
-    SCENE_H = 32
+    SCENE_H = 30
     large_top = y
     row_h = 0
     for i, (num, kick, head, deck, scene) in enumerate(LARGE):
@@ -291,7 +311,7 @@ def main():
         row_h = max(row_h, yy - y)
     y = large_top + row_h + 4
     d.line([(MX, y), (W - MX, y)], fill=RULE, width=2)
-    y += 6
+    y += 5
 
     # ---- 10 numbered stories: 2 cols x 5 rows ----
     f_nhead = font(F_SANS_B, 26)
@@ -314,45 +334,45 @@ def main():
             d.text((x, y + 28), line, font=f_nline, fill=GREY)
         y += 56
     d.line([(MX, y), (W - MX, y)], fill=RULE, width=2)
-    y += 6
+    y += 5
 
     # ---- MORE list: 3 cols x 6 rows ----
     f_more_h = font(F_SANS_B, 28)
     f_more = font(F_COND, 26)
     assert tw(d, MORE_HEADER, f_more_h) <= CW, "more header too wide"
     d.text((MX, y), MORE_HEADER, font=f_more_h, fill=INK)
-    y += 28
+    y += 26
     mcolw = (CW - 2 * 12) // 3
     for i, item in enumerate(MORE):
         col, row = divmod(i, 6)
         x = MX + col * (mcolw + 12)
-        yy = y + row * 26
+        yy = y + row * 25
         text = f"{14 + i}  {item}"
         assert tw(d, text, f_more) <= mcolw, f"more item too wide: {text!r}"
         d.text((x, yy), text, font=f_more, fill=INK)
-    y += 6 * 26 + 4
+    y += 6 * 25 + 4
     d.line([(MX, y), (W - MX, y)], fill=RULE, width=2)
-    y += 6
+    y += 5
 
     # ---- DATE CHECK box ----
     f_dc = font(F_COND, 26)
     f_dc_b = font(F_COND_B, 26)
-    box_h = 3 * 27 + 6
+    box_h = 4 * 26 + 10
     d.rectangle([MX, y, W - MX, y + box_h], outline=RED, width=2)
     yy = y + 3
     for j, line in enumerate(DATE_CHECK):
         f = f_dc_b if j == 0 else f_dc
         assert tw(d, line, f) <= CW - 16, f"date check too wide: {line!r}"
         d.text((MX + 8, yy), line, font=f, fill=INK)
-        yy += 27
-    y += box_h + 6
+        yy += 26
+    y += box_h + 5
 
     # ---- footer ----
     f_foot = font(F_COND, 26)
     for line in FOOTER:
         assert tw(d, line, f_foot) <= CW, f"footer too wide: {line!r}"
         d.text(((W - tw(d, line, f_foot)) / 2, y), line, font=f_foot, fill=GREY)
-        y += 26
+        y += 25
 
     assert y <= 1016, f"layout overflow: bottom {y}"
     img.save("entry.png")
